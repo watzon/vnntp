@@ -15,14 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Checkout V
-        uses: actions/checkout@v3
-        with:
-          repository: vlang/v
-          path: ./.v
-
-      - name: Build local V
-        run: cd ./.v && make && sudo ./v symlink
+      - name: Build V
+        run: |
+          cd /tmp
+          git clone https://github.com/vlang/v.git
+          cd v
+          make
+          sudo ./v symlink
+          cd $GITHUB_WORKSPACE
 
       - name: Generate docs
         run: v doc -o ./docs -f html .
@@ -31,5 +31,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
