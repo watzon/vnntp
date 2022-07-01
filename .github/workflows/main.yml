@@ -14,12 +14,11 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
-      
+
       - uses: vlang/setup-v@v1
         with:
           token: ${{ github.token }}
-          check-latest: true
-          stable: true
+          version: '0.3'
 
       - name: Generate docs
         run: v doc -o ./docs -f html .
