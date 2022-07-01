@@ -135,9 +135,9 @@ pub fn (mut stream NntpsStream) last() ?string {
 pub fn (mut stream NntpsStream) list() ?[]NewsGroup {
 	list_command := 'LIST\r\n'
 
-	_ := stream.stream.write_string(list_command)?
+	stream.stream.write_string(list_command)?
 
-	_, _ := stream.read_response(215)?
+	stream.read_response(215)?
 
 	lines := stream.read_multiline_response()?
 	return lines.map(new_news_group(it))
@@ -147,18 +147,18 @@ pub fn (mut stream NntpsStream) list() ?[]NewsGroup {
 pub fn (mut stream NntpsStream) group(group string) ? {
 	group_command := 'GROUP $group\r\n'
 
-	_ := stream.stream.write_string(group_command)?
+	stream.stream.write_string(group_command)?
 
-	_, _ := stream.read_response(211)?
+	stream.read_response(211)?
 }
 
 // Show the help command given on the server.
 pub fn (mut stream NntpsStream) help() ?[]string {
 	help_command := 'HELP\r\n'
 
-	_ := stream.stream.write_string(help_command)?
+	stream.stream.write_string(help_command)?
 
-	_, _ := stream.read_response(100)?
+	stream.read_response(100)?
 
 	return stream.read_multiline_response()
 }
@@ -167,9 +167,9 @@ pub fn (mut stream NntpsStream) help() ?[]string {
 pub fn (mut stream NntpsStream) quit() ? {
 	quit_command := 'QUIT\r\n'
 
-	_ := stream.stream.write_string(quit_command)?
+	stream.stream.write_string(quit_command)?
 
-	_, _ := stream.read_response(205)?
+	stream.read_response(205)?
 }
 
 // Retrieves a list of newsgroups since the date and time given.
@@ -179,9 +179,9 @@ pub fn (mut stream NntpsStream) newgroups(date string, time string, use_gmt bool
 		false { 'NEWSGROUP $date $time\r\n' }
 	}
 
-	_ := stream.stream.write_string(newgroups_command)?
+	stream.stream.write_string(newgroups_command)?
 
-	_, _ := stream.read_response(231)?
+	stream.read_response(231)?
 
 	return stream.read_multiline_response()
 }
@@ -193,9 +193,9 @@ pub fn (mut stream NntpsStream) newnews(wildmat string, date string, time string
 		false { 'NEWNEWS $wildmat $date $time\r\n' }
 	}
 
-	_ := stream.stream.write_string(newnews_command)?
+	stream.stream.write_string(newnews_command)?
 
-	_, _ := stream.read_response(230)?
+	stream.read_response(230)?
 
 	return stream.read_multiline_response()
 }
@@ -204,7 +204,7 @@ pub fn (mut stream NntpsStream) newnews(wildmat string, date string, time string
 pub fn (mut stream NntpsStream) next() ?string {
 	next_command := 'NEXT\r\n'
 
-	_ := stream.stream.write_string(next_command)?
+	stream.stream.write_string(next_command)?
 
 	_, msg := stream.read_response(223)?
 	return msg
@@ -218,13 +218,13 @@ pub fn (mut stream NntpsStream) post(message string) ? {
 
 	post_command := 'POST\r\n'
 
-	_ := stream.stream.write_string(post_command)?
+	stream.stream.write_string(post_command)?
 
-	_, _ := stream.read_response(340)?
+	stream.read_response(340)?
 
 	stream.stream.write_string(message)?
 
-	_, _ := stream.read_response(240)?
+	stream.read_response(240)?
 }
 
 // Gets information about the current article.
@@ -243,7 +243,7 @@ pub fn (mut stream NntpsStream) stat_by_number(number int) ?string {
 }
 
 fn (mut stream NntpsStream) retrieve_stat(command string) ?string {
-	_ := stream.stream.write_string(command) or {
+	stream.stream.write_string(command) or {
 		return error('write error')
 	}
 
