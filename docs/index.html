@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> | vdoc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+		<link rel="stylesheet" href="doc.css" />
+		<link rel="stylesheet" href="normalize.css" />
+		<script src="dark-mode.js"></script>
+</head>
+
+<body>
+  <div><a id="skip-to-content-link" href="#main-content">Skip to content</a></div>
+  <div id="page">
+    <header class="doc-nav hidden">
+      <div class="heading-container">
+        <div class="heading">
+          <div class="info">
+            <div class="module"></div>
+            <div class="toggle-version-container">
+              <span>0.1.0 d7f962e</span>
+              <div id="dark-mode-toggle" role="switch" aria-checked="false" aria-label="Toggle dark mode"><svg xmlns="http://www.w3.org/2000/svg" class="light-icon" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dark-icon" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><g><path d="M11.1,12.08C8.77,7.57,10.6,3.6,11.63,2.01C6.27,2.2,1.98,6.59,1.98,12c0,0.14,0.02,0.28,0.02,0.42 C2.62,12.15,3.29,12,4,12c1.66,0,3.18,0.83,4.1,2.15C9.77,14.63,11,16.17,11,18c0,1.52-0.87,2.83-2.12,3.51 c0.98,0.32,2.03,0.5,3.11,0.5c3.5,0,6.58-1.8,8.37-4.52C18,17.72,13.38,16.52,11.1,12.08z"/></g><path d="M7,16l-0.18,0C6.4,14.84,5.3,14,4,14c-1.66,0-3,1.34-3,3s1.34,3,3,3c0.62,0,2.49,0,3,0c1.1,0,2-0.9,2-2 C9,16.9,8.1,16,7,16z"/></g></g></svg>
+</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" id="toggle-menu" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+
+          </div>
+          <input type="text" id="search" placeholder="Search... (beta)" autocomplete="off">
+        </div>
+      </div>
+      <nav class="search hidden"></nav>
+      <nav class="content hidden">
+        <ul>
+          <li class="open"><a href="#connect">fn connect</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#new_article">fn new_article</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#new_news_group">fn new_news_group</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#split_date">fn split_date</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#trim_group">fn trim_group</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#Article">struct Article</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#NewsGroup">struct NewsGroup</a>        <ul>
+</ul>
+</li>
+<li class="open"><a href="#NntpsStream">struct NntpsStream</a>        <ul>
+<li><a href="#NntpsStream.article">fn article</a></li>
+<li><a href="#NntpsStream.article_by_id">fn article_by_id</a></li>
+<li><a href="#NntpsStream.article_by_number">fn article_by_number</a></li>
+<li><a href="#NntpsStream.body">fn body</a></li>
+<li><a href="#NntpsStream.body_by_id">fn body_by_id</a></li>
+<li><a href="#NntpsStream.body_by_number">fn body_by_number</a></li>
+<li><a href="#NntpsStream.capabilities">fn capabilities</a></li>
+<li><a href="#NntpsStream.date">fn date</a></li>
+<li><a href="#NntpsStream.head">fn head</a></li>
+<li><a href="#NntpsStream.head_by_id">fn head_by_id</a></li>
+<li><a href="#NntpsStream.head_by_number">fn head_by_number</a></li>
+<li><a href="#NntpsStream.last">fn last</a></li>
+<li><a href="#NntpsStream.list">fn list</a></li>
+<li><a href="#NntpsStream.group">fn group</a></li>
+<li><a href="#NntpsStream.help">fn help</a></li>
+<li><a href="#NntpsStream.quit">fn quit</a></li>
+<li><a href="#NntpsStream.newgroups">fn newgroups</a></li>
+<li><a href="#NntpsStream.newnews">fn newnews</a></li>
+<li><a href="#NntpsStream.next">fn next</a></li>
+<li><a href="#NntpsStream.post">fn post</a></li>
+<li><a href="#NntpsStream.stat">fn stat</a></li>
+<li><a href="#NntpsStream.stat_by_id">fn stat_by_id</a></li>
+<li><a href="#NntpsStream.stat_by_number">fn stat_by_number</a></li>
+</ul>
+</li>
+
+        </ul>
+      </nav>
+    </header>
+    <div class="doc-scrollview" id="main-content">
+      <div class="doc-container">
+        <div class="doc-content">
+          						<section id="" class="doc-node">
+
+
+</section>
+
+						<section id="connect" class="doc-node">
+							<div class="title"><h2>fn connect <a href="#connect">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token function">connect</span><span class="token punctuation">(</span>addr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">?</span>NntpsStream</code></pre>
+<p>Creates an NNTP Stream.</p>
+
+</section>
+						<section id="new_article" class="doc-node">
+							<div class="title"><h2>fn new_article <a href="#new_article">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token function">new_article</span><span class="token punctuation">(</span>lines <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> Article</code></pre>
+
+
+</section>
+						<section id="new_news_group" class="doc-node">
+							<div class="title"><h2>fn new_news_group <a href="#new_news_group">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token function">new_news_group</span><span class="token punctuation">(</span>group <span class="token builtin">string</span><span class="token punctuation">)</span> NewsGroup</code></pre>
+
+
+</section>
+						<section id="split_date" class="doc-node">
+							<div class="title"><h2>fn split_date <a href="#split_date">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token function">split_date</span><span class="token punctuation">(</span>date_response <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token punctuation">)</span></code></pre>
+
+
+</section>
+						<section id="trim_group" class="doc-node">
+							<div class="title"><h2>fn trim_group <a href="#trim_group">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token function">trim_group</span><span class="token punctuation">(</span>_str <span class="token builtin">string</span><span class="token punctuation">,</span> arr <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span></code></pre>
+
+
+</section>
+						<section id="Article" class="doc-node">
+							<div class="title"><h2>struct Article <a href="#Article">#</a></h2></div><pre class="signature"><code><span class="token keyword">struct</span> <span class="token symbol">Article</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span><span class="token punctuation">:</span>
+	headers <span class="token builtin">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+	body    <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+</section>
+						<section id="NewsGroup" class="doc-node">
+							<div class="title"><h2>struct NewsGroup <a href="#NewsGroup">#</a></h2></div><pre class="signature"><code><span class="token keyword">struct</span> <span class="token symbol">NewsGroup</span> <span class="token punctuation">{</span>
+<span class="token keyword">pub</span><span class="token punctuation">:</span>
+	name   <span class="token builtin">string</span>
+	high   <span class="token builtin">int</span>
+	low    <span class="token builtin">int</span>
+	status <span class="token builtin">string</span>
+<span class="token punctuation">}</span></code></pre>
+
+
+</section>
+						<section id="NntpsStream" class="doc-node">
+							<div class="title"><h2>struct NntpsStream <a href="#NntpsStream">#</a></h2></div><pre class="signature"><code><span class="token keyword">struct</span> <span class="token symbol">NntpsStream</span> <span class="token punctuation">{</span>
+<span class="token keyword">mut</span><span class="token punctuation">:</span>
+	stream <span class="token operator">&</span>net<span class="token punctuation">.</span>TcpConn
+<span class="token punctuation">}</span></code></pre>
+
+
+</section>
+						<section id="NntpsStream.article" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) article <a href="#NntpsStream.article">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">article</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span>Article</code></pre>
+<p>The article indicated by the current article number in the currently selected newsgroup is selected.</p>
+
+</section>
+						<section id="NntpsStream.article_by_id" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) article_by_id <a href="#NntpsStream.article_by_id">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">article_by_id</span><span class="token punctuation">(</span>id <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">?</span>Article</code></pre>
+<p>The article indicated by the article id is selected.</p>
+
+</section>
+						<section id="NntpsStream.article_by_number" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) article_by_number <a href="#NntpsStream.article_by_number">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">article_by_number</span><span class="token punctuation">(</span>number <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">?</span>Article</code></pre>
+<p>The article indicated by the article number in the currently selected newsgroup is selected.</p>
+
+</section>
+						<section id="NntpsStream.body" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) body <a href="#NntpsStream.body">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">body</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves the body of the current article number in the currently selected newsgroup.</p>
+
+</section>
+						<section id="NntpsStream.body_by_id" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) body_by_id <a href="#NntpsStream.body_by_id">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">body_by_id</span><span class="token punctuation">(</span>id <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves the body of the article id.</p>
+
+</section>
+						<section id="NntpsStream.body_by_number" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) body_by_number <a href="#NntpsStream.body_by_number">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">body_by_number</span><span class="token punctuation">(</span>number <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves the body of the article number in the currently selected newsgroup.</p>
+
+</section>
+						<section id="NntpsStream.capabilities" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) capabilities <a href="#NntpsStream.capabilities">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">capabilities</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Gives the list of capabilities that the server has.</p>
+
+</section>
+						<section id="NntpsStream.date" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) date <a href="#NntpsStream.date">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">date</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves the date as the server sees the date.</p>
+
+</section>
+						<section id="NntpsStream.head" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) head <a href="#NntpsStream.head">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">head</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves the headers of the current article number in the currently selected newsgroup.</p>
+
+</section>
+						<section id="NntpsStream.head_by_id" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) head_by_id <a href="#NntpsStream.head_by_id">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">head_by_id</span><span class="token punctuation">(</span>id <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves the headers of the article id.</p>
+
+</section>
+						<section id="NntpsStream.head_by_number" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) head_by_number <a href="#NntpsStream.head_by_number">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">head_by_number</span><span class="token punctuation">(</span>number <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves the headers of the article number in the currently selected newsgroup.</p>
+
+</section>
+						<section id="NntpsStream.last" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) last <a href="#NntpsStream.last">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">last</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token builtin">string</span></code></pre>
+<p>Moves the currently selected article number back one</p>
+
+</section>
+						<section id="NntpsStream.list" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) list <a href="#NntpsStream.list">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span>NewsGroup</code></pre>
+<p>Lists all of the newgroups on the server.</p>
+
+</section>
+						<section id="NntpsStream.group" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) group <a href="#NntpsStream.group">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">group</span><span class="token punctuation">(</span>group <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">?</span></code></pre>
+<p>Selects a newsgroup</p>
+
+</section>
+						<section id="NntpsStream.help" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) help <a href="#NntpsStream.help">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">help</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Show the help command given on the server.</p>
+
+</section>
+						<section id="NntpsStream.quit" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) quit <a href="#NntpsStream.quit">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span></code></pre>
+<p>Quits the current session.</p>
+
+</section>
+						<section id="NntpsStream.newgroups" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) newgroups <a href="#NntpsStream.newgroups">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">newgroups</span><span class="token punctuation">(</span>date <span class="token builtin">string</span><span class="token punctuation">,</span> time <span class="token builtin">string</span><span class="token punctuation">,</span> use_gmt <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves a list of newsgroups since the date and time given.</p>
+
+</section>
+						<section id="NntpsStream.newnews" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) newnews <a href="#NntpsStream.newnews">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">newnews</span><span class="token punctuation">(</span>wildmat <span class="token builtin">string</span><span class="token punctuation">,</span> date <span class="token builtin">string</span><span class="token punctuation">,</span> time <span class="token builtin">string</span><span class="token punctuation">,</span> use_gmt <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span></code></pre>
+<p>Retrieves a list of new news since the date and time given.</p>
+
+</section>
+						<section id="NntpsStream.next" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) next <a href="#NntpsStream.next">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token builtin">string</span></code></pre>
+<p>Moves the currently selected article number forward one</p>
+
+</section>
+						<section id="NntpsStream.post" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) post <a href="#NntpsStream.post">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">post</span><span class="token punctuation">(</span>message <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">?</span></code></pre>
+<p>Posts a message to the NNTP server.</p>
+
+</section>
+						<section id="NntpsStream.stat" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) stat <a href="#NntpsStream.stat">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">stat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token builtin">string</span></code></pre>
+<p>Gets information about the current article.</p>
+
+</section>
+						<section id="NntpsStream.stat_by_id" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) stat_by_id <a href="#NntpsStream.stat_by_id">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">stat_by_id</span><span class="token punctuation">(</span>id <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token builtin">string</span></code></pre>
+<p>Gets the information about the article id.</p>
+
+</section>
+						<section id="NntpsStream.stat_by_number" class="doc-node">
+							<div class="title"><h2>fn (NntpsStream) stat_by_number <a href="#NntpsStream.stat_by_number">#</a></h2></div><pre class="signature"><code><span class="token keyword">fn</span> <span class="token punctuation">(</span><span class="token keyword">mut</span> stream NntpsStream<span class="token punctuation">)</span> <span class="token function">stat_by_number</span><span class="token punctuation">(</span>number <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token builtin">string</span></code></pre>
+<p>Gets the information about the article number.</p>
+
+</section>
+
+          <div class="footer">
+            Powered by vdoc. Generated on: 1 Jul 2022 10:07:27
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <script src="doc.js"></script>
+  <script async src="search_index.js"></script>
+</body>
+
+</html>
