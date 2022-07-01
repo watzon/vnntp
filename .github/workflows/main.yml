@@ -18,7 +18,7 @@ jobs:
       - uses: vlang/setup-v@v1
         with:
           token: ${{ github.token }}
-          version: 'weekly.2022.21'
+          version: 'weekly.2022.16'
 
       - name: Generate docs
         run: v doc -o ./docs -f html .
